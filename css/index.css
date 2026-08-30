@@ -14,7 +14,7 @@ max-width: 38rem;
 margin: 2.5rem auto;
 padding: 1.25rem;
 background-color: rgb(80, 173, 254);
-border: 1px solid #cac3c3;
+border: 3px solid #eee719;
 }
 
 #cidade {
@@ -27,20 +27,20 @@ font-size: 1rem;
     width: 100%;
     padding: 0.400rem;
     cursor: pointer;
-    background-color:rgb(211, 218, 224);
-    border: 2px solid rgb (210,218,224);
+    background-color:rgb(133, 187, 234);
+    border: 1px solid rgb (210,218,224);
 }
 
 .cidade:hover {
-    background-color: #cac3c3;
+    background-color: #fde404;
     
 }
-
+s
 #previsao {
     margin-top: 1.5rem;
 }
 
 .dia {
     padding: 0.625rem;
-    border: 1px solid yellow;
+    border: 3px solid rgb(255, 238, 7);
 }

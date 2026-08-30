@@ -1,7 +1,7 @@
 let campoCidade = document.querySelector("#cidade");
 let elementoMensagem = document.querySelector("#mensagem");
-let elementosCidades = document.querySelector("#cidades");
-let elementosPrevisao = document.querySelector("#previsao");
+let elementoCidades = document.querySelector("#cidades");
+let elementoPrevisao = document.querySelector("#previsao");
 
 campoCidade.addEventListener("keydown", function (evento) {
   if (evento.key == "Enter") {
@@ -25,10 +25,10 @@ async function buscarCidades() {
       let elementoCidade = document.createElement("p");
       elementoCidade.textContent = `${dados[i].nome} - ${dados[i].estado}`;
       elementoCidade.classList.add("cidade");
-      elementosCidade.addEventListener("click", function () {
+      elementoCidade.addEventListener("click", function () {
         buscarPrevisao(dados[i].id);
       });
-      elementosCidades.appendChild(elementoCidade);
+      elementoCidades.appendChild(elementoCidade);
     }
     elementoMensagem.textContent = "";
   } else {
@@ -37,7 +37,7 @@ async function buscarCidades() {
 }
 
 async function buscarPrevisao(id) {
-  elementosPrevisao.textContent = "Buscando...";
+  elementoPrevisao.textContent = "Buscando...";
 
   let resposta = await fetch(
     `https://brasilapi.com.br/api/cptec/v1/clima/previsao/${id}`,
@@ -46,13 +46,13 @@ async function buscarPrevisao(id) {
   let dados = await resposta.json();
 
   if (resposta.ok) {
-    elementosPrevisao.innerHTML = `
+    elementoPrevisao.innerHTML = `
     <h2>${dados.cidade} - ${dados.estado}</h2>
-    <div class="dia>
-    <p> Data: ${dados.clima[0].data}</p>
+    <div class="dia">
+    <p> Data: ${formatarData(dados.clima[0].data)}</p>
     <p>Condição: ${dados.clima[0].condicao_desc}</p>
     <p>Temperatura Mínima: ${dados.clima[0].min} °C</p>
-    <p>Temperatura Máxima: ${dados.clima[0].condicao_desc} °C</p>
+    <p>Temperatura Máxima: ${dados.clima[0].max} °C</p>
     <p>Índice UV: ${dados.clima[0].indice_uv}</p>
     </div>
     `;
