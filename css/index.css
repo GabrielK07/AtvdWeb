@@ -1,46 +1,284 @@
-@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap");
 
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: Google Sans, sans-serif;
-    background-color: rgb(58, 153, 255);
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family:
+    Google Sans,
+    sans-serif;
+  color: aliceblue;
+  background-color: rgba(68, 155, 248, 0.955);
 }
 
 main {
-max-width: 38rem;
-margin: 2.5rem auto;
-padding: 1.25rem;
-background-color: rgb(80, 173, 254);
-border: 3px solid #eee719;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.painel {
+  width: min (100%, 64rem);
+  padding: clamp(1.5rem, 5vw, 2.75rem);
+  background-color: rgba(10, 70, 170, 1.2);
+  border: 3px solid rgba(1, 121, 249, 0.788);
+  border-radius: 1.75rem;
+}
+
+.cabecalho {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.icone-clima {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.75rem;
+  width: 3.75rem;
+  border-radius: 1rem;
+  font-size: 2rem;
+  background: linear-gradient(150deg, #fd0404, #000000);
+  box-shadow: 0 0.65rem 1.5rem rgba(255, 230, 10, 0.1);
+}
+
+h1,
+h2,
+p {
+  margin-top: 0%;
+}
+
+.titulo {
+  margin-bottom: 0%;
+  font-size: clamp(1.75rem, 5vw, 2.3rem);
+  letter-spacing: -0, 04em;
+  text-transform: uppercase;
+}
+
+.subtitulo {
+  margin-bottom: 0.3rem;
+  color: #fcd600;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12;
+}
+
+.busca label {
+  display: block;
+  margin-bottom: 0.7rem;
+  font-weight: 700;
+  color: aliceblue;
+}
+
+.campo-busca {
+  position: relative;
+}
+
+.campo-busca span {
+  position: absolute;
+  top: 45%;
+  cursor: pointer;
+  left: -3.2rem;
+  font-size: 3.2rem;
+  transform: translateY(-50%) rotate(5deg);
 }
 
 #cidade {
-width: 100%;
-padding: 1.5%;
-font-size: 1rem;
+  width: 100%;
+  padding: 0.95rem 1rem 0.95rem 3 rem;
+  font-size: 1rem;
+  background: #fefefe;
+  border: 8px solid transparent;
+  border-radius: 0.5rem;
+  outline: none;
+  transition:
+    border-color 160ms,
+    box-shadow 160ms,
+    background 160ms;
+}
+
+#cidade:focus {
+  border-color: rgb(245, 247, 250);
+  box-shadow: 0 0 0 0.2rem rgba(68, 155, 248, 0.955);
+  background: #fff;
+}
+
+.busca small {
+  display: block;
+  margin-top: 0.55rem;
+  color: rgba(240, 248, 255, 0.78);
+}
+
+#mensagem {
+  min-height: 1.25rem;
+  margin: 1rem 0 0;
+  color: rgb(220, 236, 249);
+  font-weight: 600;
+}
+
+#cidades {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin-top: 0.35rem;
 }
 
 .cidade {
-    width: 100%;
-    padding: 0.400rem;
-    cursor: pointer;
-    background-color:rgb(133, 187, 234);
-    border: 1px solid rgb (210,218,224);
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.85rem;
+  cursor: pointer;
+  font: inherit;
+  background-color: rgb(133, 187, 234);
+  border: 1px solid rgb (210, 218, 224);
+  border-radius: 0.8rem;
+  transition:
+    transform 160ms,
+    border-color 160ms,
+    background 160ms;
 }
 
-.cidade:hover {
-    background-color: #fde404;
-    
+.cidade::after {
+  content: "\2192";
+  color: rgb(0, 85, 255);
+  font-size: 1.6rem;
 }
-s
+
+.cidade:focus-visible {
+  background-color: #fefefe;
+  border-color: aqua;
+  outline: none;
+  transform: translateX(0.2rem);
+}
+
 #previsao {
-    margin-top: 1.5rem;
+  margin-top: 1.75rem;
+}
+
+#previsao h2 {
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
+}
+
+.dias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 0.85;
 }
 
 .dia {
-    padding: 0.625rem;
-    border: 3px solid rgb(255, 238, 7);
+  padding: 1.2rem;
+  background: linear-gradient(145deg, blue, rgb(255, 230, 0));
+  border-radius: 1rem;
+  border-top: 0.3rem solid rgba(255, 0, 0, 0.601);
+  border: 2px solid rgba(255, 238, 7, 0.593);
+  box-shadow:
+    0 0.8rem 1.9rem,
+    rgb(0, 0, 0);
+}
+.dia p {
+  margin-bottom: 0.55rem;
+}
+
+.dia p:last-child {
+  margin-bottom: 0;
+}
+
+.dia .data {
+  padding-bottom: 0.6rem;
+  font-weight: 800;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.temperaturas {
+  display: flex;
+  gap: 1rem;
+  margin: 0.9rem 0;
+}
+
+.temperaturas strong {
+  display: block;
+  font-size: 1.6rem;
+}
+
+@media (hover: hover) {
+  .cidade:hover {
+    background-color: #fefefe;
+    border-color: aqua;
+    outline: none;
+    transform: translateX(0.2rem);
+  }
+}
+
+@media (max-width: 48rem) {
+  main {
+    padding: 1.25rem;
+  }
+
+  .painel {
+    padding: 2rem;
+    border-radius: 1.4rem;
+  }
+
+  #cidades {
+    grid-template-columns: 1fr;
+  }
+  .dias {
+    grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  }
+}
+
+@media (max-width: 32rem) {
+  main {
+    padding: 0;
+    align-items: flex-start;
+  }
+  .painel {
+    min-height: 100vh;
+    padding: 1.5rem 1rem;
+    border: 0;
+    border-radius: 0;
+  }
+  .cabecalho {
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+  .icone-clima {
+    flex-basis: 3.15rem;
+    height: 3.15rem;
+    font-size: 1.7rem;
+    border-radius: 0.9rem;
+  }
+  h1 {
+    font-size: 1.65rem;
+    line-height: 1.1rem;
+  }
+  #cidade {
+    min-height: 3rem;
+    font-size: 1rem;
+  }
+
+  .cidade {
+    min-height: 3rem;
+  }
+  #previsao {
+    margin-top: 1.35rem;
+  }
+  .dia {
+    padding: 1rem;
+  }
+  .temperaturas {
+    justify-content: space-between;
+    max-width: 14rem;
+  }
 }
