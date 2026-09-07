@@ -36,7 +36,7 @@ async function buscarCidades() {
         });
         elementoCidades.appendChild(elementoCidade);
       }
-      elementoMensagem.textContent = `${dados.lenght}cidade(s) encontrada(s)`;
+      elementoMensagem.textContent = `${dados.length} cidade(s) encontrada(s)`;
     } else {
       elementoMensagem.textContent = "Nenhuma Cidade Localizada.";
     }
