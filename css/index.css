@@ -27,7 +27,13 @@ main {
   padding: clamp(1.5rem, 5vw, 2.75rem);
   background-color: rgba(10, 70, 170, 1.2);
   border: 3px solid rgba(1, 121, 249, 0.788);
-  border-radius: 1.75rem;
+  border-radius: 2.75rem;
+   background: linear-gradient(155deg, 
+    #FFD000 5%,
+    #FF9E00 50%,
+    #A8DADC 80%,
+    #F8F9FA 100%
+  );
 }
 
 .cabecalho {
@@ -56,15 +62,16 @@ p {
 }
 
 .titulo {
+  font-size: 1rem;
   margin-bottom: 0%;
-  font-size: clamp(1.75rem, 5vw, 2.3rem);
+  font-size: clamp(1.75rem, 5vw, 1.5rem);
   letter-spacing: -0, 04em;
   text-transform: uppercase;
 }
 
 .subtitulo {
   margin-bottom: 0.3rem;
-  color: #fcd600;
+  color: #f9f9f9;
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12;
@@ -81,14 +88,6 @@ p {
   position: relative;
 }
 
-.campo-busca span {
-  position: absolute;
-  top: 45%;
-  cursor: pointer;
-  left: -3.2rem;
-  font-size: 3.2rem;
-  transform: translateY(-50%) rotate(5deg);
-}
 
 #cidade {
   width: 100%;
